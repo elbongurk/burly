@@ -1,0 +1,20 @@
+{
+  "name": "elbongurk/burly",
+  "type": "wordpress-theme",
+  "repositories": [
+		{
+		    "type": "vcs",
+		    "url": "https://github.com/elbongurk/Custom-Meta-Boxes"
+		}
+	],
+	"require" : {
+		"xamin/handlebars.php": "dev-master",
+		"humanmade/custom-meta-boxes" : "dev-composer",
+		"icanboogie/inflector": "dev-master"
+	},
+	"autoload": {
+		"psr-0": {
+			"Burly": "src/"
+		}
+	}
+}
