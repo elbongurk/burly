@@ -1,0 +1,54 @@
+---
+layout: default
+---
+
+<header role="banner">
+	<h1><img src="/assets/img/logo.png"/></h1>
+</header>
+<div class="container">
+  <div class="call">
+	  <h2>A friendly WordPress framework written for <span class="noun">designers</span> to <span class="verb">create</span>.</h2>
+	  <nav>
+		  <ul>
+			  <li><a href="/docs/quickstart.html">Quickstart</a></li>
+			  <li><a href="https://github.com/elbongurk/burly/releases">Download</a></li>
+		  </ul>
+	  </nav>
+  </div>
+  <div class="browser-preview">
+	  <div class="browser-chrome"/></div>
+{% highlight html %}
+<article>
+  <header><h1>Recipe for {%raw%}{{burlyText food}}{%endraw%}<h1></header>
+  <figure><img src="{%raw%}{{burlyImage picture}}{%endraw%}"></figure>
+  <ul>
+    {%raw%}{{#burlyRepeater ingredients}}{%endraw%}
+    <li>{%raw%}{{burlyText amount}} {{burlyText name}}{%endraw%}</li>
+    {%raw%}{{/burlyRepeater ingredients}}{%endraw%}
+  </ul>
+  <ol>
+    {%raw%}{{#burlyRepeater directions}}{%endraw%}
+    <li>{%raw%}{{burlyText step}}{%endraw%}</li>
+    {%raw%}{{/burlyRepeater directions}}{%endraw%}
+  </ol>
+  <section class="notes">{%raw%}{{burlyTextArea notes}}{%endraw%}</section>
+  <footer><a href="{%raw%}{{burlyFile pdfDownload}}{%endraw%}">Print Recipe</a></footer>
+</article>
+{% endhighlight %}
+</div>
+</div>
+</div>
+<div class="questions">
+	<dl>
+	  <dt>Does typing <code>&lt;?php echo what_was_that_function ?&gt;</code> make your head hurt?</dt>
+	  <dd>Some text talking about how we don't require knowing the PHPs</dd>
+	  <dt>Ever want more than just a WordPress editor to give to the client?</dt>
+	  <dd>Some text talking about how we help to organize your content for the client.</dd>
+	  <dt>Wish you had more control of the design?</dt>
+	  <dd>Some text alking about how you can completely control the design of your HTML &amp CSS</dd>
+	</dl>
+</div>
+<footer role="contentinfo">
+	<p class="copy">Copyright &copy; 2014 Elbongurk, LLC</p>
+	<p class="marketing">e An <a href="http://elbongurk.com">Elbongurk</a> Endeavour</p>
+</footer>
