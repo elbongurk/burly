@@ -4,7 +4,14 @@ layout: doc
 
 # Quickstart
 
-## Requirements
+* [Requirements](#requirements)
+* [Installing Burly](#install-burly)
+* [Creating your Theme](#create-theme)
+* [Installing your Theme](#install-theme)
+* [Creating a Page](#create-page)
+* [Editing Content](#edit-content)
+
+## Requirements {#requirements}
 
 Burly assumes that your are capable of the following:
 
@@ -13,7 +20,7 @@ Burly assumes that your are capable of the following:
 * Installing WordPress on your hosting plan (ask your hosting provider)
 * Using FTP/SFTP to access to your WordPress hosting plan (ask your hosting provider)
 
-## Installing Burly
+## Installing Burly {#install-burly}
 
 After installing WordPress on your hosting plan:
 
@@ -24,7 +31,7 @@ After installing WordPress on your hosting plan:
 5. Select *Choose File* and locate your `burly.zip` to upload
 6. Select *Install Now*
 
-## Creating your Theme
+## Creating your Theme {#create-theme}
 
 You should have a folder that already contains all the HTML, CSS, Javascript and other assets that your website requires. 
 
@@ -41,7 +48,7 @@ Parent: Burly
 */
 {% endhighlight %}
 
-## Installing your Theme
+## Installing your Theme {#install-theme}
 
 To install your theme, create a zip file of your `my-theme` folder. Now install your theme just like you installed Burly:
 
@@ -52,7 +59,7 @@ To install your theme, create a zip file of your `my-theme` folder. Now install 
 5. Select *Install Now*
 6. Select *Activate* to begin using your theme after its uploaded
 
-## Creating a Page
+## Creating a Page {#create-page}
 
 Navigate to your homepage to check to see if your `index.html` file appears. By doing so you've just created your first WordPress page with Burly.
 
@@ -60,7 +67,7 @@ Burly will create WordPress pages for any `.html` file in your `my-theme` folder
 
 As an example, if you had a file named `about.html` and navigated to `http://yoursite.com/about.html` in your browser, Burly will create a WordPress page for that file named *About*.
 
-## Editing Content
+## Editing Content {#edit-content}
 
 Now that you have created some WordPress pages through Burly, lets get to adding sections for our client to edit.
 
@@ -107,7 +114,3 @@ Now that you've located this file, edit it to look like the following:
 Navigate to your homepage and you'll now see that this text has disappeared! Don't panic! It's because this text is now become editable on the page. 
 
 To check, go to your WordPress admin and select the *Pages* menu option and open the *Home* page. You should now see a spot to place your description text. Go ahead an place some text here and update the page and go back and you'll see your text is now being pulled from WordPress.
-
-## Learning More
-
-Now that you have made your first content editable from within WordPress, the next step would be to check out the [reference](/docs/reference.html) section to learn about the other options available to you.

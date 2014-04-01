@@ -236,6 +236,19 @@ dl code, p code, ol code, ul code {
 	display: inline-block;
 }
 
+.docs {
+  h2 {
+    border-top: 1px solid #ccc;
+    padding-top: 0.75em;
+    margin-bottom: 0.75em;
+    color: #666;
+  }
+  ul, ol, p {
+    margin-bottom: 1em;
+  }
+}
+
+
 footer[role="contentinfo"] {
 	padding: 0 20px;
 	text-align: center;
