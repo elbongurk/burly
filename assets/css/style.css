@@ -3034,57 +3034,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 body {
   background-image: #F5F4F1; }
 
-body > nav {
-  display: none; }
-  @media screen and (min-width: 40em) {
-    body > nav {
-      display: block;
-      background: #fefefe;
-      height: 100vh;
-      max-height: 100%;
-      width: 200px;
-      position: relative;
-      float: left;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      overflow-y: scroll;
-      padding: 20px; } }
-
-body > main {
-  background: #F9F8F6;
-  height: 100vh; }
-  @media screen and (min-width: 40em) {
-    body > main {
-      overflow-y: scroll;
-      max-height: 100%;
-      width: calc(100% - 200px);
-      float: left; } }
-
-article {
-  padding: 0 20px; }
-  article ul, article ol {
-    padding-left: 20px;
-    margin-bottom: 0.75em; }
-  article ul {
-    list-style: disc; }
-  article ol {
-    list-style: decimal; }
-
-.docs-container {
-  *zoom: 1;
-  max-width: 60em;
-  margin-left: auto;
-  margin-right: auto; }
-  .docs-container:before, .docs-container:after {
-    content: " ";
-    display: table; }
-  .docs-container:after {
-    clear: both; }
-
-.container {
-  background-image: url("../img/plaid.jpg");
-  padding-top: 40px;
-  border-top: 1px solid #29120b; }
-
 header[role="banner"] {
   *zoom: 1;
   max-width: 60em;
@@ -3096,9 +3045,65 @@ header[role="banner"] {
   header[role="banner"]:after {
     clear: both; }
   header[role="banner"] h1 {
-    margin: 20px 0 0;
-    font-size: 100px;
+    margin: 20px 0;
     text-align: center; }
+
+footer[role="contentinfo"] {
+  padding: 0 20px;
+  text-align: center;
+  *zoom: 1;
+  max-width: 60em;
+  margin-left: auto;
+  margin-right: auto; }
+  footer[role="contentinfo"]:before, footer[role="contentinfo"]:after {
+    content: " ";
+    display: table; }
+  footer[role="contentinfo"]:after {
+    clear: both; }
+  @media screen and (min-width: 40em) {
+    footer[role="contentinfo"] p {
+      float: left;
+      display: block;
+      margin-right: 6.66667%;
+      width: 46.66667%; }
+      footer[role="contentinfo"] p:last-child {
+        margin-right: 0; }
+    footer[role="contentinfo"] p.copy {
+      text-align: left; }
+    footer[role="contentinfo"] p.marketing {
+      text-align: right; } }
+  @media screen and (min-width: 53.75em) {
+    footer[role="contentinfo"] p {
+      float: left;
+      display: block;
+      margin-right: 3.22581%;
+      width: 48.3871%; }
+      footer[role="contentinfo"] p:last-child {
+        margin-right: 0; } }
+
+dl code, p code, ol code, ul code {
+  padding: 0px 5px 2px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  color: #666666;
+  display: inline-block; }
+
+.wrapper {
+  *zoom: 1;
+  max-width: 60em;
+  margin-left: auto;
+  margin-right: auto; }
+  .wrapper:before, .wrapper:after {
+    content: " ";
+    display: table; }
+  .wrapper:after {
+    clear: both; }
+
+/*! Home */
+.home-container {
+  background-image: url("../img/plaid.jpg");
+  padding-top: 40px;
+  border-top: 1px solid #29120b; }
 
 .call {
   *zoom: 1;
@@ -3284,50 +3289,76 @@ header[role="banner"] {
   .questions dd {
     margin-bottom: 2em; }
 
-dl code, p code, ol code, ul code {
-  padding: 0px 5px 2px;
-  border: 1px solid #dddddd;
-  border-radius: 3px;
-  color: #666666;
-  display: inline-block; }
-
-.docs h2 {
-  border-top: 1px solid #ccc;
-  padding-top: 0.75em;
-  margin-bottom: 0.75em;
-  color: #666; }
-.docs ul, .docs ol, .docs p {
-  margin-bottom: 1em; }
-
-footer[role="contentinfo"] {
-  padding: 0 20px;
-  text-align: center;
-  *zoom: 1;
-  max-width: 60em;
-  margin-left: auto;
-  margin-right: auto; }
-  footer[role="contentinfo"]:before, footer[role="contentinfo"]:after {
-    content: " ";
-    display: table; }
-  footer[role="contentinfo"]:after {
-    clear: both; }
+/*! Docs */
+.docs nav {
+  display: none; }
   @media screen and (min-width: 40em) {
-    footer[role="contentinfo"] p {
-      float: left;
+    .docs nav {
       display: block;
-      margin-right: 6.66667%;
-      width: 46.66667%; }
-      footer[role="contentinfo"] p:last-child {
-        margin-right: 0; }
-    footer[role="contentinfo"] p.copy {
-      text-align: left; }
-    footer[role="contentinfo"] p.marketing {
-      text-align: right; } }
-  @media screen and (min-width: 53.75em) {
-    footer[role="contentinfo"] p {
+      background: #fefefe;
+      height: 100vh;
+      max-height: 100%;
+      width: 200px;
+      position: relative;
       float: left;
-      display: block;
-      margin-right: 3.22581%;
-      width: 48.3871%; }
-      footer[role="contentinfo"] p:last-child {
-        margin-right: 0; } }
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      overflow-y: scroll;
+      padding: 20px; } }
+  .docs nav ul {
+    margin-bottom: 1em;
+    font-size: 0.9em; }
+    .docs nav ul li, .docs nav ul a {
+      display: block; }
+  .docs nav > ul > li > a {
+    color: #888;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: 600;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 0.5em; }
+    .docs nav > ul > li > a:hover {
+      color: #333; }
+
+.docs main {
+  background: #F9F8F6;
+  height: 100vh; }
+  @media screen and (min-width: 40em) {
+    .docs main {
+      overflow-y: scroll;
+      max-height: 100%;
+      width: calc(100% - 200px);
+      float: left; } }
+
+.docs article {
+  padding: 0 40px; }
+  .docs article h1 {
+    color: #333;
+    padding-top: 0.5em;
+    margin-bottom: 0.75em; }
+  .docs article h2 {
+    border-top: 1px solid #ccc;
+    padding-top: 0.75em;
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
+    color: #666; }
+    .docs article h2:before {
+      content: "# ";
+      color: #888; }
+  .docs article h3 {
+    margin-bottom: 0.75em;
+    color: #666; }
+  .docs article ul, .docs article ol, .docs article p {
+    margin-bottom: 1.5em; }
+  .docs article ul, .docs article ol {
+    padding-left: 20px; }
+  .docs article ul {
+    list-style: disc; }
+  .docs article ol {
+    list-style: decimal; }
+  .docs article ul:first-of-type {
+    list-style: none;
+    padding-left: 0; }
+    .docs article ul:first-of-type li:before {
+      content: "# ";
+      padding-right: 5px;
+      color: #888; }

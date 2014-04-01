@@ -2,7 +2,7 @@
 layout: doc
 ---
 
-# Quickstart
+# Burly Quickstart
 
 * [Requirements](#requirements)
 * [Installing Burly](#install-burly)
