@@ -17,7 +17,19 @@ class Page extends BaseObject
 	
 	public function title()
 	{
-		return wp_title( '|', false, 'right' );
+		$title = get_bloginfo( 'name', 'display' );
+	
+		if ( is_home() || is_front_page() ) {
+			$site_description = get_bloginfo( 'description', 'display' );
+			if ($site_description) {
+				$title .= " | " . $site_description;
+			}
+		}
+		else {
+			$title = apply_filters( 'the_title', $this->wp_post->post_title ) . " | " . $title;
+		}
+	
+		return $title;
 	}
 	
 	public function id()

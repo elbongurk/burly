@@ -178,8 +178,8 @@ class Routing
 
 		$engine = new \Handlebars\Handlebars(array(
 			'helpers' => new Helpers(),
-		    'loader' => new Loader($theme_dir, $options),
-		    'partials_loader' => new Loader($theme_dir, $options)
+		    'loader' => new \Handlebars\Loader\FilesystemLoader($theme_dir, $options),
+		    'partials_loader' => new \Handlebars\Loader\FilesystemLoader($theme_dir, $options)
 		));	
 
 		$page = new Page($post);

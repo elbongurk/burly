@@ -29,6 +29,22 @@ class Helpers extends \Handlebars\Helpers
 	{
 		parent::addDefaultHelpers();
 		
+		$this->add('burlyHead', function($template, $context, $args, $source) {
+			ob_start();
+			wp_head();
+			$head = ob_get_clean();
+			
+			return new \Handlebars\SafeString($head);
+		});	
+
+		$this->add('burlyFooter', function($template, $context, $args, $source) {
+			ob_start();
+			wp_footer();
+			$footer = ob_get_clean();
+			
+			return new \Handlebars\SafeString($footer);
+		});	
+		
 		$this->add('burlyTitle', function ($template, $context, $args, $source) {
 			return $context->last()->title();
 		});

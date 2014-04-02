@@ -1,40 +1,58 @@
-<?php get_header(); ?>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Page Not Found</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
 
-<?php while (have_posts()) : the_post(); ?>
+        * {
+            line-height: 1.5;
+            margin: 0;
+        }
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header>
-		<h1><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
-	</header>
-	<section class="content">
-		<?php the_content('Continue reading <span class="meta-nav">&rarr;</span>'); ?>
-	</section>
-</article>
+        html {
+            color: #888;
+            font-family: sans-serif;
+            text-align: center;
+        }
 
-<?php endwhile; ?>
+        body {
+            left: 50%;
+            margin: -43px 0 0 -150px;
+            position: absolute;
+            top: 50%;
+            width: 300px;
+        }
 
-<?php if (!have_posts()): ?>
-<article>
-	<header>
-		<h1>No posts found.</h1>
-	</header>
-	<section class="content">
-		<p>Ready to publish your first post? <a href="<?php echo admin_url( 'post-new.php' ); ?>">Get started here</a>.</p>
-	</section>
-</article>
+        h1 {
+            color: #555;
+            font-size: 2em;
+            font-weight: 400;
+        }
 
-<?php endif; ?>
+        p {
+            line-height: 1.2;
+        }
 
-<?php if (get_next_posts_link() || get_previous_posts_link()): ?>
-<nav class="paging">
-	<?php if (get_next_posts_link()) : ?>
-	<div class="nav-previous"><?php next_posts_link('&larr; Older Posts'); ?></div>
-	<?php endif; ?>
-	<?php if (get_previous_posts_link()) : ?>
-	<div class="nav-next"><?php previous_posts_link('Newer Posts &rarr;'); ?></div>
-	<?php endif; ?>
-</nav>
-<?php endif; ?>
+        @media only screen and (max-width: 270px) {
 
+            body {
+                margin: 10px auto;
+                position: static;
+                width: 95%;
+            }
 
-<?php get_footer(); ?>
+            h1 {
+                font-size: 1.5em;
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Page Not Found</h1>
+    <p>Sorry, but the page you were trying to view does not exist.</p>
+</body>
+</html>
