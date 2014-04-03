@@ -3047,6 +3047,8 @@ header[role="banner"] {
   header[role="banner"] h1 {
     margin: 20px 0;
     text-align: center; }
+    header[role="banner"] h1 img {
+      width: 200px; }
 
 footer[role="contentinfo"] {
   padding: 0 20px;
