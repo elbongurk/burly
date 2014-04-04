@@ -37,15 +37,13 @@ class Updater
 		
 		$release = $this->releaseVersion();
 		
-		$version = ltrim($release->tag_name, 'v');
-		
-		$update = version_compare( $version, $transient->checked['burly'] );
+		$update = version_compare( ltrim($release->tag_name, 'v'), $transient->checked['burly'] );
 		
 		if ($update > 0) {
 			$transient->response['burly'] = array(
-				'new_version' => $version,
-				'url' => $release->html_url,
-				'package' => $release->assets[0]->url			
+				'new_version' => ltrim($release->tag_name, 'v'),
+				'url' => 'http://burly.io',
+				'package' => 'https://github.com/elbongurk/burly/releases/download/' . $release->tag_name . '/burly.zip'		
 			);
 		}
 
