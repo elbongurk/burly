@@ -1,5 +1,6 @@
 ---
 layout: doc
+title: Reference
 ---
 
 # Burly Reference

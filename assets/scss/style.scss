@@ -80,14 +80,22 @@ header[role="banner"] {
 		text-align: center;
     img {
       width: 200px;
+
+      @include media($medium-screen-up) {
+        width: 250px;
+      }
     }
 	}
 }
 
 footer[role="contentinfo"] {
-	padding: 0 20px;
+  border-top: 1px solid #ccc;
+	padding: 10px 20px 0;
 	text-align: center;
-	@include outer-container;
+  p {
+    font-size: 0.9em;
+  }
+	@include outer-container;  
 	@include media($medium-screen-up) {
 		p {
 			@include span-columns(2 of 4);
@@ -130,12 +138,12 @@ dl code, p code, ol code, ul code {
 	@include outer-container;
 	h2 {
 		text-align: center;
-		margin-bottom: 40px;
 		font-size: 20px;
 		color: #f8f8f8;
+    margin: 0 20px 40px;
 		span {
 			@include animation-duration(2s);
-			color: darken(#FF851B, 10%);
+			color: darken(#FF851B, 5%);
 			border-bottom: 1px solid #f8f8f8;
 			display: inline-block;
 			opacity: 0;
@@ -150,6 +158,9 @@ dl code, p code, ol code, ul code {
 	nav {
 		margin-bottom: 60px;
 		@include outer-container;
+    ul {
+      margin: 0 20px;
+    }
 		li:last-child a {
 			@include button(simple, #eee);
 			display: block;
@@ -191,18 +202,19 @@ dl code, p code, ol code, ul code {
 }
 
 .browser-preview {
-	border-radius: 5px 5px 0 0;
 	@include outer-container;
 
 	.browser-chrome {
 		background-image: url('../img/browser-frame.png');	
 		height: 22px;
+	  border-radius: 5px 5px 0 0;
+    margin: 0 20px;
 	}
 	
 	.highlight {
 		box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 		background: #F8F8F8;
-		margin-bottom: -100px;		
+    margin: 0 20px -100px;
 		border-radius: 0 0 5px 5px;
 	}
 }
@@ -210,16 +222,25 @@ dl code, p code, ol code, ul code {
 .questions {
 	margin-top: 120px;
 	@include outer-container;	
+  dl {
+    margin: 0 20px;
+  }
 	dt {
 		margin-bottom: 1em;
 	}
-	
 	dd {
 		margin-bottom: 2em;
 	}
 }
 
 /*! Docs */
+
+.docs {
+	background: #F9F8F6;
+  .highlight {
+    border: 1px solid #ddd;
+  }
+}
 
 .docs nav {
 	display: none;
@@ -259,7 +280,6 @@ dl code, p code, ol code, ul code {
 }
 
 .docs main {
-	background: #F9F8F6;
 	height: 100vh;
 	@include media($medium-screen-up) {
 		overflow-y: scroll;
@@ -270,7 +290,10 @@ dl code, p code, ol code, ul code {
 }
 
 .docs article {
-	padding: 0 40px;
+	padding: 0 20px;
+  @include media($medium-screen-up) {
+    padding: 0 40px;
+  }
   h1 {
     color: #333;
     padding-top: 0.5em;

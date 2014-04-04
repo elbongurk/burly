@@ -3049,14 +3049,20 @@ header[role="banner"] {
     text-align: center; }
     header[role="banner"] h1 img {
       width: 200px; }
+      @media screen and (min-width: 40em) {
+        header[role="banner"] h1 img {
+          width: 250px; } }
 
 footer[role="contentinfo"] {
-  padding: 0 20px;
+  border-top: 1px solid #ccc;
+  padding: 10px 20px 0;
   text-align: center;
   *zoom: 1;
   max-width: 60em;
   margin-left: auto;
   margin-right: auto; }
+  footer[role="contentinfo"] p {
+    font-size: 0.9em; }
   footer[role="contentinfo"]:before, footer[role="contentinfo"]:after {
     content: " ";
     display: table; }
@@ -3119,14 +3125,14 @@ dl code, p code, ol code, ul code {
     clear: both; }
   .call h2 {
     text-align: center;
-    margin-bottom: 40px;
     font-size: 20px;
-    color: #f8f8f8; }
+    color: #f8f8f8;
+    margin: 0 20px 40px; }
     .call h2 span {
       -webkit-animation-duration: 2s;
       -moz-animation-duration: 2s;
       animation-duration: 2s;
-      color: #e76b00;
+      color: #ff7701;
       border-bottom: 1px solid #f8f8f8;
       display: inline-block;
       opacity: 0; }
@@ -3145,6 +3151,8 @@ dl code, p code, ol code, ul code {
       display: table; }
     .call nav:after {
       clear: both; }
+    .call nav ul {
+      margin: 0 20px; }
     .call nav li:last-child a {
       border: 1px solid #cacaca;
       border-radius: 3px;
@@ -3256,7 +3264,6 @@ dl code, p code, ol code, ul code {
     margin: 0; }
 
 .browser-preview {
-  border-radius: 5px 5px 0 0;
   *zoom: 1;
   max-width: 60em;
   margin-left: auto;
@@ -3268,11 +3275,13 @@ dl code, p code, ol code, ul code {
     clear: both; }
   .browser-preview .browser-chrome {
     background-image: url("../img/browser-frame.png");
-    height: 22px; }
+    height: 22px;
+    border-radius: 5px 5px 0 0;
+    margin: 0 20px; }
   .browser-preview .highlight {
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
     background: #F8F8F8;
-    margin-bottom: -100px;
+    margin: 0 20px -100px;
     border-radius: 0 0 5px 5px; }
 
 .questions {
@@ -3286,12 +3295,19 @@ dl code, p code, ol code, ul code {
     display: table; }
   .questions:after {
     clear: both; }
+  .questions dl {
+    margin: 0 20px; }
   .questions dt {
     margin-bottom: 1em; }
   .questions dd {
     margin-bottom: 2em; }
 
 /*! Docs */
+.docs {
+  background: #F9F8F6; }
+  .docs .highlight {
+    border: 1px solid #ddd; }
+
 .docs nav {
   display: none; }
   @media screen and (min-width: 40em) {
@@ -3322,7 +3338,6 @@ dl code, p code, ol code, ul code {
       color: #333; }
 
 .docs main {
-  background: #F9F8F6;
   height: 100vh; }
   @media screen and (min-width: 40em) {
     .docs main {
@@ -3332,7 +3347,10 @@ dl code, p code, ol code, ul code {
       float: left; } }
 
 .docs article {
-  padding: 0 40px; }
+  padding: 0 20px; }
+  @media screen and (min-width: 40em) {
+    .docs article {
+      padding: 0 40px; } }
   .docs article h1 {
     color: #333;
     padding-top: 0.5em;
