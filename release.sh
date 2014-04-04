@@ -2,7 +2,9 @@ THEME_DIR=$(pwd)
 BUILD_DIR=$THEME_DIR/build
 TEMP_DIR=$BUILD_DIR/burly
 
-composer update
+echo "Updating composer"
+
+composer -q update
 
 mkdir -p $TEMP_DIR
 
@@ -50,4 +52,4 @@ echo "Zipping files"
 cd $BUILD_DIR && zip -qr burly.zip burly -x "*/\.*" -x "\.*"
 rm -rf $TEMP_DIR
 
-echo "Done."
+echo "Built burly.zip"
