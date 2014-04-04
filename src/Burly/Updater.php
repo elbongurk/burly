@@ -9,13 +9,13 @@ class Updater
 	public function __construct()
 	{
 		if (is_admin()) {
-			add_filter('pre_set_site_transient_update_themes', array( $this, "setTransitent" ) );
+			add_filter('pre_set_site_transient_update_themes', array( $this, 'setTransitent' ) );
 		}
 	}
 	
 	private function releaseVersion()
 	{
-		$url = "https://api.github.com/repos/elbongurk/burly/releases";
+		$url = 'https://api.github.com/repos/elbongurk/burly/releases';
 		$result = wp_remote_get( $url );
 		$result = wp_remote_retrieve_body( $result );
 
@@ -37,11 +37,13 @@ class Updater
 		
 		$release = $this->releaseVersion();
 		
-		$update = version_compare( $release->tag_name, $transient->checked['burly'] );
+		$version = ltrim($release->tag_name, 'v');
+		
+		$update = version_compare( $version, $transient->checked['burly'] );
 		
 		if ($update > 0) {
 			$transient->response['burly'] = array(
-				'new_version' => $release->tag_name,
+				'new_version' => $version,
 				'url' => $release->html_url,
 				'package' => $release->assets[0]->url			
 			);
