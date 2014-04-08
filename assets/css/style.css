@@ -3435,7 +3435,7 @@ dl code, p code, ol code, ul code {
   @media screen and (min-width: 40em)  {
     .docs article {
       max-width: 50em;
-      margin: 0 auto;
+      margin: 0 auto 75px auto;
       padding: 0 40px; } }
   .docs article h1 {
     color: #333;

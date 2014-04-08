@@ -295,7 +295,7 @@ dl code, p code, ol code, ul code {
 	padding: 0 20px;
   @include media($medium-screen-up) {
   	max-width: 50em;
-	margin: 0 auto;
+	margin: 0 auto 75px auto;
     padding: 0 40px;
   }
   h1 {
