@@ -3388,7 +3388,9 @@ dl code, p code, ol code, ul code {
 
 /*! Docs */
 .docs {
-  background: #F9F8F6; }
+  background: #F9F8F6;
+  max-width: 60em;
+  margin: 0 auto; }
   .docs .highlight {
     border: 1px solid #ddd; }
 
