@@ -222,6 +222,7 @@ dl code, p code, ol code, ul code {
 .questions {
 	margin-top: 120px;
 	@include outer-container;	
+	max-width: 45em;
   dl {
     margin: 0 20px;
   }
