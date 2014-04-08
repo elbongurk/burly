@@ -339,5 +339,24 @@ dl code, p code, ol code, ul code {
   }
 }
 
+img#docs-nav-logo {
+	margin-bottom: 50px;
+	display: none;
+	@include media($medium-screen-up) {
+	display: block;
+}
+}
 
+img#docs-logo {
+	display: block;
+	@include media($medium-screen-up) {
+	display: none;
+}
+}
+
+h1#burly-quickstart {
+	margin-top: 100px;
+	font-size: 3.5em;
+	color: #555;
+}
 
