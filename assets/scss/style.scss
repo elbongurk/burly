@@ -239,8 +239,6 @@ dl code, p code, ol code, ul code {
 
 .docs {
 	background: #F9F8F6;
-	max-width: 60em;
-	margin: 0 auto;
   .highlight {
     border: 1px solid #ddd;
   }
@@ -296,6 +294,8 @@ dl code, p code, ol code, ul code {
 .docs article {
 	padding: 0 20px;
   @include media($medium-screen-up) {
+  	max-width: 60em;
+	margin: 0 auto;
     padding: 0 40px;
   }
   h1 {

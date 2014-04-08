@@ -3388,9 +3388,7 @@ dl code, p code, ol code, ul code {
 
 /*! Docs */
 .docs {
-  background: #F9F8F6;
-  max-width: 60em;
-  margin: 0 auto; }
+  background: #F9F8F6; }
   .docs .highlight {
     border: 1px solid #ddd; }
 
@@ -3436,6 +3434,8 @@ dl code, p code, ol code, ul code {
   padding: 0 20px; }
   @media screen and (min-width: 40em)  {
     .docs article {
+      max-width: 60em;
+      margin: 0 auto;
       padding: 0 40px; } }
   .docs article h1 {
     color: #333;
