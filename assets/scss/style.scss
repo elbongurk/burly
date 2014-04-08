@@ -348,7 +348,7 @@ img#docs-nav-logo {
 }
 
 img#docs-logo {
-	display: block;
+	display: inline;
 	@include media($medium-screen-up) {
 		display: none;
 	}

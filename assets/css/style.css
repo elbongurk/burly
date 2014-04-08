@@ -3475,7 +3475,7 @@ img#docs-nav-logo {
       display: block; } }
 
 img#docs-logo {
-  display: block; }
+  display: inline; }
   @media screen and (min-width: 40em)  {
     img#docs-logo {
       display: none; } }
