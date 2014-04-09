@@ -220,8 +220,10 @@ dl code, p code, ol code, ul code {
 }
 
 .questions {
-	margin-top: 120px;
+	margin-top: 150px;
+	margin-bottom: 75px;
 	@include outer-container;	
+	max-width: 45em;
   dl {
     margin: 0 20px;
   }
@@ -292,6 +294,8 @@ dl code, p code, ol code, ul code {
 .docs article {
 	padding: 0 20px;
   @include media($medium-screen-up) {
+  	max-width: 50em;
+	margin: 0 auto 75px auto;
     padding: 0 40px;
   }
   h1 {
@@ -335,6 +339,30 @@ dl code, p code, ol code, ul code {
       color: #888;
     }
   }
+}
+
+img#docs-nav-logo {
+	display: none;
+	@include media($medium-screen-up) {
+		margin-bottom: 50px;
+		display: block;
+	}
+}
+
+img#docs-logo {
+	display: inline;
+	@include media($medium-screen-up) {
+		display: none;
+	}
+}
+
+
+@include media($medium-screen-up) {
+	h1#burly-quickstart, h1#burly-reference {
+		margin-top: 100px;
+		font-size: 3.5em;
+		color: #555;
+	}	
 }
 
 
