@@ -49,7 +49,7 @@ rm -r $LIB_DIR/tests
 
 echo "Zipping files"
 
-cd $BUILD_DIR && zip -qr burly.zip burly -x "*/\.*" -x "\.*"
+cd $BUILD_DIR && zip -qFSr burly.zip burly -x "*/\.*" -x "\.*"
 rm -rf $TEMP_DIR
 
 echo "Built burly.zip"

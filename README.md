@@ -6,7 +6,7 @@ A friendly WordPress framework written for designers to create, clients to edit,
 
 * Never type `<?php echo what_was_that_fucntion ?>` again.
 * Give more to your clients than just a WordPress content editor.
-* Don't compromise on your design to amek your content editable.
+* Don't compromise on your design to make your content editable.
 
 ## Installation
 
