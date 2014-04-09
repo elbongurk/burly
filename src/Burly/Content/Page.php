@@ -1,10 +1,11 @@
 <?php
 
-namespace Burly;
+namespace Burly\Content;
 
+use Burly\Content;
 use ICanBoogie\Inflector;
 
-class Page extends BaseObject
+class Page extends Content
 {
 	private $wp_post;
 

@@ -1,19 +1,10 @@
 <?php
 
-namespace Burly;
+namespace Burly\Admin;
 
 class Updater
 {
-	private $theme;
-
-	public function __construct()
-	{
-		if (is_admin()) {
-			add_filter('pre_set_site_transient_update_themes', array( $this, 'setTransitent' ) );
-		}
-	}
-	
-	private function releaseVersion()
+	protected function releaseVersion()
 	{
 		$url = 'https://api.github.com/repos/elbongurk/burly/releases';
 		$result = wp_remote_get( $url );

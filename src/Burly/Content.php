@@ -2,7 +2,7 @@
 
 namespace Burly;
 
-abstract class BaseObject
+abstract class Content
 {
 	abstract protected function content($key, $type, $options);	
 

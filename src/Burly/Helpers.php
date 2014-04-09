@@ -2,6 +2,8 @@
 
 namespace Burly;
 
+use Burly\Model;
+
 class Helpers extends \Handlebars\Helpers
 {
 	private function parseArgs($args, $defaultOptions = array())
@@ -32,6 +34,7 @@ class Helpers extends \Handlebars\Helpers
 		$this->add('burlyHead', function($template, $context, $args, $source) {
 			ob_start();
 			wp_head();
+			
 			$head = ob_get_clean();
 			
 			return new \Handlebars\SafeString($head);
@@ -73,7 +76,6 @@ class Helpers extends \Handlebars\Helpers
 			$page = $context->last();
 			$buffer = "";
 
-			//TODO: should probably hack off .html and index.html
 			if ($page->slug() == $args) {
 				$buffer .= $template->render($context);
 			}
@@ -101,7 +103,7 @@ class Helpers extends \Handlebars\Helpers
 			$buffer = "";
 			
 			list($key, $options) = $this->parseArgs($args, array('repeatable' => true));
-			$testGroup = new Group($key, $options);
+			$testGroup = new Content\Group($key, $options);
 			
 			$context->push($testGroup);
 			$template->render($context);

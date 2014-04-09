@@ -2,72 +2,17 @@
 
 namespace Burly;
 
-class Routing
+class Router
 {
-	public function __construct() 
-	{
-		if (is_child_theme()) {
-			add_action('pre_get_posts', array($this, 'checkRoute'));
-			add_action('template_redirect', array($this, 'locateTemplate'));
-	
-			add_action('generate_rewrite_rules', array($this, 'generateRules'));
-			add_filter('mod_rewrite_rules', array($this, 'modifyRules'), '', 1);
-			add_action('admin_init', array($this, 'writeRules'));
-		}	
-	}
-	
-	public function writeRules()
-	{
-		global $pagenow;
-	
-		if (isset($_GET['activated']) && $pagenow == "themes.php") {
-			flush_rewrite_rules();		
-		}
-	}
-		
-	public function generateRules()
-	{
-		$theme_dir = ltrim(get_stylesheet_directory_uri(), '/');
-		add_rewrite_rule("(.+)$(?<!\.html|\.php)", $theme_dir . "/$1", "top");
-	}
-	
-	public function modifyRules($rules)
-	{
-		$theme_dir = get_stylesheet_directory();
-		$pos = strpos($rules, "RewriteRule ^(.+)$(?<!\.html|\.php)");
-		
-		$conditions = "";
-		$conditions .= "RewriteCond %{REQUEST_FILENAME} !-f\n";
-		$conditions .= "RewriteCond %{REQUEST_FILENAME} !-d\n";
-		$conditions .= "RewriteCond " . $theme_dir . "/%{REQUEST_URI} -f\n";
-		
-		return substr_replace($rules, $conditions, $pos, 0);
-	}
-	
 	public function checkRoute($query)
 	{
-		if ('posts' == get_option( 'show_on_front') && $query->is_home()) {		
+		if (!$query->is_admin && $query->is_main_query() && $query->is_home() && 'posts' == get_option( 'show_on_front')) {		
 			$theme_dir = get_stylesheet_directory() . "/";			
 			$template = "index";
 			$template_path = $theme_dir . $template . ".html";
 			
 			if (file_exists($template_path)) {
-				$page_id = 0;
-				$page = get_page_by_title("Home");
-				if (!empty($page)) {
-					$page_id = $page->ID;
-				}
-				else {
-					$page_id = wp_insert_post(array(
-						'post_type' => "page", 
-						'post_name' => "front-page", 
-						'post_title' => "Home",
-						'post_status' => 'publish'
-					));
-				}
-				
-				update_option( 'show_on_front', 'page' );			
-				update_option( 'page_on_front', $page_id );
+				$this->createHomepage();
 			}
 		}		
 	}
@@ -134,7 +79,27 @@ class Routing
 		}
 	}
 	
-	private function createTemplate($slug)
+	protected function createHomepage()
+	{
+		$page_id = 0;
+		$page = get_page_by_title("Home");
+		if (!empty($page)) {
+			$page_id = $page->ID;
+		}
+		else {
+			$page_id = wp_insert_post(array(
+				'post_type' => "page", 
+				'post_name' => "front-page", 
+				'post_title' => "Home",
+				'post_status' => 'publish'
+			));
+		}
+		
+		update_option( 'show_on_front', 'page' );			
+		update_option( 'page_on_front', $page_id );
+	}
+	
+	protected function createTemplate($slug)
 	{
 		if (preg_match("/\/index$/", $slug)) {
 			$slug = substr($slug, 0, -6);
@@ -166,7 +131,7 @@ class Routing
 		return $page_id;
 	}
 	
-	private function renderTemplate($template)
+	protected function renderTemplate($template)
 	{
 		global $post;
 	
@@ -182,7 +147,7 @@ class Routing
 		    'partials_loader' => new \Handlebars\Loader\FilesystemLoader($theme_dir, $options)
 		));	
 
-		$page = new Page($post);
+		$page = new Content\Page($post);
 		
 		echo $engine->render($template, $page);       
 	}

@@ -1,10 +1,11 @@
 <?php
 
-namespace Burly;
+namespace Burly\Content;
 
+use Burly\Content;
 use ICanBoogie\Inflector;
 
-class Group extends BaseObject
+class Group extends Content
 {
 	private $options;
 	private $data;
