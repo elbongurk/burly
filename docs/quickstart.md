@@ -45,7 +45,7 @@ A file named `style.css` must exist directly inside your `my-theme` folder.  Thi
 {% highlight css %}
 /*
 Theme Name: My Theme
-Parent: Burly
+Parent: burly
 */
 {% endhighlight %}
 
