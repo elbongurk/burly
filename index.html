@@ -21,11 +21,13 @@ layout: home
 <article>
   <header><h1>Recipe for {%raw%}{{burlyText food}}{%endraw%}<h1></header>
   <figure><img src="{%raw%}{{burlyImage picture}}{%endraw%}"></figure>
+  <h2>Ingredients</h2>
   <ul>
     {%raw%}{{#burlyRepeater ingredients}}{%endraw%}
     <li>{%raw%}{{burlyText amount}} {{burlyText name}}{%endraw%}</li>
     {%raw%}{{/burlyRepeater ingredients}}{%endraw%}
   </ul>
+  <h2>Directions</h2>
   <ol>
     {%raw%}{{#burlyRepeater directions}}{%endraw%}
     <li>{%raw%}{{burlyText step}}{%endraw%}</li>
