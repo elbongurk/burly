@@ -21,10 +21,6 @@ class Router
 	{
 		global $post;
 	
-		if ($_SERVER['REQUEST_METHOD'] != "GET") {
-			return;
-		}
-	
 		if (is_404()) {
 			$slug = substr(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), 1);
 		

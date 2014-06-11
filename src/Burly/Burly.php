@@ -113,7 +113,7 @@ class Burly
 	protected function loadRouter()
 	{
 		add_action('pre_get_posts', array($this->getRouter(), 'checkRoute'));
-		add_action('template_redirect', array($this->getRouter(), 'locateTemplate'));
+		add_action('template_redirect', array($this->getRouter(), 'locateTemplate'), 30);
 	}
 	
 	protected function loadUpdater()
